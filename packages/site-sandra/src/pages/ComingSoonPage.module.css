@@ -1,0 +1,49 @@
+.page {
+  min-height: 60vh;
+  padding: 4rem 1.5rem;
+  background: #000000;
+}
+
+.intro {
+  width: min(100%, 560px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  letter-spacing: 0.24em;
+}
+
+.title {
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 8vw, 4.75rem);
+  line-height: 1;
+}
+
+.message {
+  margin: 1.25rem auto 2rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.backButton {
+  padding: 0.8rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.backButton:hover,
+.backButton:focus-visible {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.08);
+}

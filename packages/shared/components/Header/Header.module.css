@@ -107,8 +107,6 @@
   z-index: 200;
 }
 
-.dropdown:hover .dropdownMenu,
-.dropdown:focus-within .dropdownMenu,
 .dropdownOpen .dropdownMenu {
   display: block;
 }

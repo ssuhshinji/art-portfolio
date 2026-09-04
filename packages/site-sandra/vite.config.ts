@@ -2,12 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: '/art-portfolio/',
+  base: command === 'build' ? '/art-portfolio/' : '/',
   resolve: {
     alias: {
       '@portfolio/shared': path.resolve(__dirname, '../shared')
     }
   }
-});
+}));

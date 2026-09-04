@@ -38,11 +38,11 @@ export const App: React.FC = () => {
     <Splash
       title={siteConfig.name}
       subtitle={siteConfig.tagline}
-      heroImage="/assets/merow.png"
+      heroImage={`${import.meta.env.BASE_URL}assets/merow.png`}
       socialLinks={siteConfig.socialLinks}
       buttonText="ENTER"
     >
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Layout config={siteConfig}>
           <AppRoutes />
         </Layout>

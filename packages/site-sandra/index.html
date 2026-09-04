@@ -11,6 +11,13 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      const redirectPath = sessionStorage.getItem('portfolio_redirect');
+      if (redirectPath) {
+        sessionStorage.removeItem('portfolio_redirect');
+        history.replaceState(null, '', redirectPath);
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

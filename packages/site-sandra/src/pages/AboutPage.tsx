@@ -10,7 +10,7 @@ export const AboutPage: React.FC = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
         <div>
           <img
-            src="/assets/about-sandra.jpg"
+            src={`${import.meta.env.BASE_URL}assets/about-sandra.jpg`}
             alt="Portrait of Sandra Suh"
             style={{ width: '100%', borderRadius: '8px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}
           />

@@ -134,14 +134,11 @@ describe('art portfolio gallery pages', () => {
       .toHaveAttribute('src', '/assets/axel-fanart.png');
     expect(screen.getByRole('img', { name: /dark-haired character wearing pink sunglasses/i }))
       .toHaveAttribute('src', '/assets/illustration-10.png');
-    expect(screen.getByRole('img', { name: /standing beneath gothic arches on a moonlit balcony/i }))
-      .toHaveAttribute('src', '/assets/illustration-va.png');
     expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
       '/project/project-1',
       '/project/project-16',
       '/project/illustration-10',
       '/project/illustration-axel',
-      '/project/illustration-va',
       '/project/project-sketch',
       '/project/project-sketch2'
     ]);
@@ -199,6 +196,12 @@ describe('art portfolio gallery pages', () => {
       .toHaveAttribute('src', '/assets/concept-adventures-of-bingus.jpg');
     expect(screen.getByRole('img', { name: /cowboy character wearing two stacked hats/i }))
       .toHaveAttribute('src', '/assets/concept-cowboy-character.png');
+    expect(screen.getByRole('img', { name: /Cat-eared maid posing with Mudkip/i }))
+      .toHaveAttribute('src', '/assets/commission-tenko.png');
+    expect(screen.getByRole('img', { name: /standing beneath gothic arches on a moonlit balcony/i }))
+      .toHaveAttribute('src', '/assets/illustration-va.png');
+    expect(screen.getByRole('img', { name: /black dress on a beach/i }))
+      .toHaveAttribute('src', '/assets/concept-beach-help.jpg');
     expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
       '/project/comm-4',
       '/project/concept-merow',
@@ -210,11 +213,14 @@ describe('art portfolio gallery pages', () => {
       '/project/project-18',
       '/project/concept-3',
       '/project/concept-adventures-of-bingus',
-      '/project/concept-cowboy-character'
+      '/project/concept-cowboy-character',
+      '/project/commission-tenko',
+      '/project/illustration-va',
+      '/project/concept-beach-help'
     ]);
   });
 
-  it('includes the Tenko artwork in Commissions', () => {
+  it('keeps the Tenko artwork out of Commissions', () => {
     render(
       <MemoryRouter initialEntries={['/category/commissions']}>
         <Routes>
@@ -224,11 +230,10 @@ describe('art portfolio gallery pages', () => {
     );
 
     expect(screen.getByRole('heading', { name: 'COMMISSIONS' })).toBeInTheDocument();
-    expect(screen.getByRole('img', { name: /Cat-eared maid posing with Mudkip/i }))
-      .toHaveAttribute('src', '/assets/commission-tenko.png');
+    expect(screen.queryByRole('img', { name: /Cat-eared maid posing with Mudkip/i }))
+      .not.toBeInTheDocument();
     expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
       '/project/project-8',
-      '/project/commission-tenko',
       '/project/project-12',
       '/project/comm-3',
       '/project/comm-2',

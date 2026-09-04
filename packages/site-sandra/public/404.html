@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sandra Suh - Illustration Artist</title>
+    <script>
+      const basePath = '/art-portfolio/';
+      const route = `${location.pathname}${location.search}${location.hash}`;
+      sessionStorage.setItem('portfolio_redirect', route);
+      location.replace(basePath);
+    </script>
+  </head>
+  <body></body>
+</html>

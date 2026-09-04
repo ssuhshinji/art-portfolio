@@ -93,12 +93,6 @@ describe('art portfolio configuration', () => {
       image: '/assets/illustration-10.png',
       showOnHome: false
     });
-    expect(siteConfig.projects.find((project) => project.id === 'illustration-va')).toMatchObject({
-      category: 'illustrations',
-      image: '/assets/illustration-va.png',
-      aspectRatio: '5950 / 3850',
-      showOnHome: false
-    });
   });
 
   it('keeps the sculpture views in their own gallery', () => {
@@ -123,11 +117,13 @@ describe('art portfolio configuration', () => {
       'project-18',
       'concept-3',
       'concept-adventures-of-bingus',
-      'concept-cowboy-character'
+      'concept-cowboy-character',
+      'commission-tenko',
+      'illustration-va',
+      'concept-beach-help'
     ]);
-    expect(concepts).toHaveLength(11);
+    expect(concepts).toHaveLength(14);
     expect(concepts.every((project) => project.size === 'medium')).toBe(true);
-    expect(concepts.every((project) => project.aspectRatio === '1 / 1')).toBe(true);
     expect(concepts.every((project) => project.objectFit === 'contain')).toBe(true);
 
     const commissions = siteConfig.projects.filter((project) => project.category === 'commissions');
@@ -135,9 +131,15 @@ describe('art portfolio configuration', () => {
       expect.arrayContaining(['comm-4', 'comm-5', 'comm-image1'])
     );
     expect(siteConfig.projects.find((project) => project.id === 'commission-tenko')).toMatchObject({
-      category: 'commissions',
+      category: 'concepts',
       image: '/assets/commission-tenko.png',
       aspectRatio: '4 / 5',
+      showOnHome: false
+    });
+    expect(siteConfig.projects.find((project) => project.id === 'illustration-va')).toMatchObject({
+      category: 'concepts',
+      image: '/assets/illustration-va.png',
+      aspectRatio: '5950 / 3850',
       showOnHome: false
     });
   });

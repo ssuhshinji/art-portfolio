@@ -1,6 +1,6 @@
 import type { SiteConfig } from '@portfolio/shared';
 
-export const siteConfig: SiteConfig = {
+const config: SiteConfig = {
   name: 'Sandra Suh',
   tagline: 'Illustration Artist',
   socialLinks: {
@@ -425,6 +425,18 @@ export const siteConfig: SiteConfig = {
       path: '/project/commission-tenko'
     },
     {
+      id: 'illustration-va',
+      title: 'Moonlit Balcony',
+      imageAlt: 'Blonde character in a white and blue outfit standing beneath gothic arches on a moonlit balcony',
+      category: 'concepts',
+      size: 'medium',
+      image: '/assets/illustration-va.png',
+      aspectRatio: '5950 / 3850',
+      objectFit: 'contain',
+      showOnHome: false,
+      path: '/project/illustration-va'
+    },
+    {
       id: 'concept-beach-help',
       title: 'Beach Day',
       imageAlt: 'Illustrated character in a black dress on a beach, with someone drowning in the background',
@@ -437,4 +449,14 @@ export const siteConfig: SiteConfig = {
       path: '/project/concept-beach-help'
     }
   ]
+};
+
+export const siteConfig: SiteConfig = {
+  ...config,
+  projects: config.projects.map((project) => ({
+    ...project,
+    image: project.image
+      ? `${import.meta.env.BASE_URL}${project.image.replace(/^\/+/, '')}`
+      : project.image
+  }))
 };

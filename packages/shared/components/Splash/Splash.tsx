@@ -40,6 +40,7 @@ export const Splash: React.FC<SplashProps> = ({
   const internalSocialProps = (href: string) => {
     const internal = href.startsWith('/');
     return {
+      href: internal ? `${import.meta.env.BASE_URL}${href.replace(/^\/+/, '')}` : href,
       target: internal ? undefined : '_blank',
       rel: internal ? undefined : 'noopener noreferrer',
       onClick: internal
@@ -79,7 +80,6 @@ export const Splash: React.FC<SplashProps> = ({
         <div className={styles.socialBar}>
           {socialLinks?.instagram && (
             <a
-              href={socialLinks.instagram}
               {...internalSocialProps(socialLinks.instagram)}
               className={styles.socialIcon}
               aria-label="Instagram"
@@ -93,7 +93,6 @@ export const Splash: React.FC<SplashProps> = ({
           )}
           {socialLinks?.twitter && (
             <a
-              href={socialLinks.twitter}
               {...internalSocialProps(socialLinks.twitter)}
               className={styles.socialIcon}
               aria-label="Twitter / X"
@@ -105,7 +104,6 @@ export const Splash: React.FC<SplashProps> = ({
           )}
           {socialLinks?.bluesky && (
             <a
-              href={socialLinks.bluesky}
               {...internalSocialProps(socialLinks.bluesky)}
               className={styles.socialIcon}
               aria-label="Bluesky"

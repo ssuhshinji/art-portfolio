@@ -13,6 +13,7 @@
     "dev:sandra": "npm run dev --workspace=packages/site-sandra",
     "build:sandra": "npm run build --workspace=packages/site-sandra",
     "preview:sandra": "npm run preview --workspace=packages/site-sandra",
+    "deploy:sandra": "npm run build:sandra && npm run deploy --workspace=packages/site-sandra",
     "dev:personal": "npm run dev --workspace=packages/site-personal",
     "build:personal": "npm run build --workspace=packages/site-personal",
     "preview:personal": "npm run preview --workspace=packages/site-personal",

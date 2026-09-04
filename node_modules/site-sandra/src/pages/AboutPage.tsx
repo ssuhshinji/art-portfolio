@@ -17,7 +17,7 @@ export const AboutPage: React.FC = () => {
         </div>
         <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
           <p style={{ marginBottom: '1.25rem' }}>
-            Hello! I am Sandra Suh, an illustrator and animator currently studying Illustration & Animation at California State University, Fullerton (CSUF).
+            Hello! I am Sandra Suh, an artist currently studying Illustration & Animation at California State University, Fullerton (CSUF).
           </p>
           <p style={{ marginBottom: '1.25rem' }}>
             I enjoy pushing my limits as an artist and challenging myself with every art project.

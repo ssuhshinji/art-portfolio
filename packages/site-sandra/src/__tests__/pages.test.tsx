@@ -62,7 +62,7 @@ describe('art portfolio gallery pages', () => {
     expect(screen.getByRole('img', { name: /white swan standing over a pond/i }))
       .toHaveAttribute('src', '/assets/sculpture-swan-koi-relief.png');
     expect(screen.getByRole('img', { name: /pendulum character swinging/i }))
-      .toHaveAttribute('src', '/assets/pendulum-example.gif');
+      .toHaveAttribute('src', '/assets/pendulum_finalized.gif');
     expect(screen.getByRole('img', { name: /characters debating sushi/i }))
       .toHaveAttribute('src', '/assets/merow.png');
     expect(screen.getByRole('img', { name: /Cat-eared character with golden eyes/i }))
@@ -252,7 +252,7 @@ describe('art portfolio gallery pages', () => {
 
     expect(screen.getByRole('heading', { name: 'ANIMATION' })).toBeInTheDocument();
     expect(screen.getByRole('img', { name: /pendulum character swinging/i }))
-      .toHaveAttribute('src', '/assets/pendulum-example.gif');
+      .toHaveAttribute('src', '/assets/pendulum_finalized.gif');
     expect(screen.getAllByRole('link').map((link) => link.getAttribute('href'))).toEqual([
       '/project/animation-pendulum'
     ]);

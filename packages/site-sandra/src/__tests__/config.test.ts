@@ -149,7 +149,7 @@ describe('art portfolio configuration', () => {
     expect(animations).toHaveLength(1);
     expect(animations[0]).toMatchObject({
       id: 'animation-pendulum',
-      image: '/assets/pendulum-example.gif',
+      image: '/assets/pendulum_finalized.gif',
       aspectRatio: '16 / 9',
       showOnHome: true
     });

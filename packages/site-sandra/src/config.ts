@@ -167,7 +167,7 @@ const config: SiteConfig = {
       imageAlt: 'A colorful pendulum character swinging against a blue background',
       category: 'animation',
       size: 'hero',
-      image: '/assets/pendulum-example.gif',
+      image: '/assets/pendulum_finalized.gif',
       aspectRatio: '16 / 9',
       objectFit: 'contain',
       maxWidth: '960px',
